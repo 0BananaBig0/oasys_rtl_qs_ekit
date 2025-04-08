@@ -1,0 +1,29 @@
+#
+# Created by Oasys-RTL -- (c) Mentor Graphics Corporation
+#
+VERSION 5.8 ;
+NAMESCASESENSITIVE ON ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN demo_chip ;
+UNITS DISTANCE MICRONS 2000 ;
+
+PROPERTYDEFINITIONS
+END PROPERTYDEFINITIONS
+
+DIEAREA ( 0 0 ) ( 2834850 2834850 ) ;
+
+REGIONS 2 ; 
+- __r__6 ( 64840 50430 ) ( 1549550 1203580 ) ;
+- __r__7 ( 1254060 1513530 ) ( 2803620 2767590 ) ;
+END REGIONS
+COMPONENTS 352 ;
+- i_cpu_sys cpu_sys
++ REGION __r__6
+ ;
+- i_usbf usb_sys
++ REGION __r__7
+ ;
+END COMPONENTS
+
+END DESIGN

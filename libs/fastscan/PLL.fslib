@@ -1,0 +1,57 @@
+
+
+library_format_version = 9;
+
+array_delimiter = "[]";
+
+
+//
+// ***********************************************************************
+// ***********   Models holding Liberty information     ******************
+// ***********************************************************************
+//
+
+
+model PLL
+  (BYPASS, DIVF0, DIVF1, DIVF2,
+   DIVF3, DIVF4, DIVF5, DIVF6,
+   DIVF7, DIVQ0, DIVQ1, DIVQ2,
+   DIVR0, DIVR1, DIVR2, DIVR3,
+   DIVR4, DIVR5, FB, FSE,
+   LOCK, PLLOUT, RANGE0, RANGE1,
+   RANGE2, REF, RESET)
+(
+  model_source = liberty_cell;
+  cell_type = prohibited;
+
+  input (BYPASS) ( )
+  input (DIVF0) ( )
+  input (DIVF1) ( )
+  input (DIVF2) ( )
+  input (DIVF3) ( )
+  input (DIVF4) ( )
+  input (DIVF5) ( )
+  input (DIVF6) ( )
+  input (DIVF7) ( )
+  input (DIVQ0) ( )
+  input (DIVQ1) ( )
+  input (DIVQ2) ( )
+  input (DIVR0) ( )
+  input (DIVR1) ( )
+  input (DIVR2) ( )
+  input (DIVR3) ( )
+  input (DIVR4) ( )
+  input (DIVR5) ( )
+  input (FB) ( )
+  input (FSE) ( )
+  input (RANGE0) ( )
+  input (RANGE1) ( )
+  input (RANGE2) ( )
+  input (REF) ( )
+  input (RESET) ( )
+  output (LOCK) ( )
+  output (PLLOUT) ( )
+  (
+  // Empty Model
+  )
+) // end model PLL

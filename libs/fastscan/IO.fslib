@@ -1,0 +1,43 @@
+
+library_format_version = 9;
+
+array_delimiter = "[]";
+
+
+//
+// ***********************************************************************
+// ***********   Models holding Liberty information     ******************
+// ***********************************************************************
+//
+
+
+model PADBID
+  (C, I, OEN, PAD)
+(
+  model_source = liberty_cell;
+  cell_type = pad;
+
+  input (I) ( pad_to_pad; )
+  input (OEN) ( pad_enable_low; )
+  inout (PAD) ( pad_pad_io; )
+  output (C) ( pad_from_pad; )
+  (
+    primitive = _buf (PAD, C);
+    primitive = _tsl (I, OEN, PAD);
+  )
+) // end model PADBID
+
+
+model PADCLK
+  (C, PAD)
+(
+  model_source = liberty_cell;
+  cell_type = pad;
+  simulation_function = buffer;
+
+  input (PAD) ( pad_from_io; )
+  output (C) ( pad_from_pad; )
+  (
+    primitive = _buf (PAD, C);
+  )
+) // end model PADCLK
