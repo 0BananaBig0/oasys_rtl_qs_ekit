@@ -33,7 +33,7 @@ set_dont_scan -verbose [get_cell  enable_nova1_reg] true
 #=======================================================#
 #Final optimize
 #=======================================================#
-optimize 
+optimize
 write_db ${output_dir}/odb/demo_chip.oasysdft_post_fix.odb
 write_verilog ${output_dir}/demo_chip.oasysdft_post_fix.v
 report_timing
@@ -47,14 +47,14 @@ report_path_groups
 # Should report 'default' as current dft partition
 current_dft_partition
 
-# Define DFT partitions 
+# Define DFT partitions
 define_dft_partition P1 -instances {i_cpu_sys nova1}
 define_dft_partition P2 -instances { nova0}
 
 
 report_dft_partitions
 
-## define_scan_chain 
+## define_scan_chain
 define_scan_chain -scan_in SI_1 -scan_out SO_1 -create_port -partition P1
 
 current_dft_partition P2

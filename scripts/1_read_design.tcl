@@ -58,14 +58,14 @@ if {[file exists ${ekit_dir}/demo_chip_rtl/rtl/nova/trunk/src/Intra4x4_PredMode_
 #=======================================================#
 
 #Set the max routing layer (defined in 1_init_design.tcl)
-set_max_route_layer $max_route_layer  				
+set_max_route_layer $max_route_layer
 
 #Reset dont_use property on all lib cells
-set_dont_use [get_lib_cell * ] false 				
+set_dont_use [get_lib_cell * ] false
 
 #Specify clock gating options
 set_clock_gating_options -control_point before \
-	-minimum_bitwidth 4 -sequential_cell latch 			
+    -minimum_bitwidth 4 -sequential_cell latch
 
 echo "\n-----------------------------"
 echo "\nDone preparing design for synthesis"

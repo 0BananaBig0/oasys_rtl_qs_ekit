@@ -2,7 +2,7 @@ if {[info exists tessent_build] && [string match $dft_flow tessent]} {
     puts "INFO::using $tessent_build build to run the Tessent DFT flow"
   } else {
     puts "ERROR::To run the tessent DFT flow, Please set the "tessent build" variable in script/init_design.tcl"
-    return 0 
+    return 0
   }
 
 #=======================================================#
@@ -10,7 +10,7 @@ if {[info exists tessent_build] && [string match $dft_flow tessent]} {
 #=======================================================#
 define_test_pin -pin scan_mode_pad/C -scan 1 -default_scan_enable
 define_test_pin -pin scan_mode -scan 1
-define_test_pin -pin reset_n_pad/C -scan 1 
+define_test_pin -pin reset_n_pad/C -scan 1
 define_test_pin -pin nova0/reset_n_sync_reg/Q -scan 1
 define_test_pin -pin nova1/reset_n_sync_reg/Q -scan 1
 define_test_clock -pin nova1/clk
@@ -35,7 +35,7 @@ report_dft_violations
 #=======================================================#
 #Final optimize
 #=======================================================#
-optimize 
+optimize
 write_db      ${output_dir}/odb/demo_chip.tessent_post_fix.odb
 write_verilog ${output_dir}/demo_chip.tessent_post_fix.v
 report_timing
@@ -77,7 +77,7 @@ run_tessent_tpi
 
 
 #=======================================================#
-# Tessent SCAN 
+# Tessent SCAN
 #=======================================================#
 check_dft
 for {set i 1} {$i < 5} {incr i} {

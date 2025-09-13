@@ -43,7 +43,7 @@ foreach lef $lef_files {
 #set_target_library high_vt
 explore lib_vt {
 hvt { set_target_library high_vt }
-lvt { set_target_library low_vt	}
+lvt { set_target_library low_vt }
 }
 
 set_dont_use [get_lib_cell * ] false
@@ -56,7 +56,7 @@ read_verilog $rtl_list  -include $search_path
 synthesize -module ${top_module} -map_to_scan -gate_clock
 
 # constraints: 1.5ns clock
-#create_clock -period 1.5 -name sysclk sysclk 
+#create_clock -period 1.5 -name sysclk sysclk
 read_sdc -verbose $demo_chip_sdc_files
 
 #insert clk explorer here

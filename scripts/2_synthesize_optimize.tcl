@@ -2,9 +2,9 @@
 #########################################################
 #                 2_synthesize_optimize.tcl
 #
-# Description:  Synthesize and optimize the 
+# Description:  Synthesize and optimize the
 #               DEMO CHIP and generate
-#               the Oasys-RTL databases. 
+#               the Oasys-RTL databases.
 #
 # Usage:        source in Oasys-RTL Command prompt
 #
@@ -50,8 +50,8 @@ write_db  ${output_dir}/odb/demo_chip.syn.odb
 #=======================================================#
 ##Read constraints (logical and physical)
 #=======================================================#
-read_sdc -verbose $demo_chip_sdc_files 
-#read_sdc -verbose constraints/cts_constraints.sdc 
+read_sdc -verbose $demo_chip_sdc_files
+#read_sdc -verbose constraints/cts_constraints.sdc
 report_design_metrics
 check_timing
 
@@ -62,7 +62,7 @@ group_path -name R2O                    -to  [all_outputs]
 report_path_groups
 
 #=======================================================#
-#Optimize for timing 
+#Optimize for timing
 #=======================================================#
 optimize -virtual
 write_db  ${output_dir}/odb/demo_chip.virtual_opt.odb
@@ -82,7 +82,7 @@ create_blockage -name  blk_bottom -type macro -left 0 -right $die -bottom 0 -top
 create_blockage -name  blk_left  -type macro -left 0 -right 30 -bottom 0 -top $die
 create_blockage -name  blk_right  -type macro -left $core -right $die -bottom 0 -top $die
 
-#optimize for placement 
+#optimize for placement
 optimize -place
 write_db  ${output_dir}/odb/demo_chip.placed_opt.odb
 report_timing
@@ -91,7 +91,7 @@ report_path_groups
 echo "\n-------------------------------------"
 echo "\nSynthesis and optimization complete"
 echo "\n-------------------------------------\n"
-#=======================================================#	
+#=======================================================#
 #Perform DFT
 #=======================================================#
 if {[info exists dft_flow] && [string match $dft_flow tessent]} {

@@ -15,10 +15,11 @@ set output_dir "${ekit_dir}/output"
 ##set a consistant reporting format for timing
 config_report timing -format "cell edge arrival delay arc_delay net_delay slew net_load load fanout location power_domain"
 
-# Set DFT flow settings 
-# To run the tessent DFT flow, please set the dft_flow variable to "tessent" from "oasys" and update tessent_build path 
+# Set DFT flow settings
+# To run the tessent DFT flow, please set the dft_flow variable to "tessent" from "oasys" and update tessent_build path
 # set dft_flow "oasys"
-# set tessent_build $env(TESSENT)/bin/tessent
+set dft_flow "tessent"
+set tessent_build /EDA/Mentor/tessent/bin/tessent
 
 #Source the script that sets the path variables for all input files
 source ${script_dir}/demo_chip_design_files.tcl

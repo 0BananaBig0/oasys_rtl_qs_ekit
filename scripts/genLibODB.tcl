@@ -6,7 +6,7 @@ puts "Base Dir: ${ekit_dir}"
 
 
 #set lib(io)  "${libs_dir}/lib_WCLCOM_ss_0p95v/LowPowerOpenCellLibrary_worst_low_ccs.lib  \
-#              ${libs_dir}/lib_WCLCOM_ss_0p95v/NangateOpenCellLibrary_worst_low_ccs.lib 
+#              ${libs_dir}/lib_WCLCOM_ss_0p95v/NangateOpenCellLibrary_worst_low_ccs.lib
 set lib(io)  "${libs_dir}/IO.lib \
               ${libs_dir}/PLL.lib \
               ${libs_dir}/MemGen_16_10.lib"
@@ -35,10 +35,10 @@ set lef(lvt)  ${lefs_dir}/NangateOpenCellLibrary_LVT.macro.lef
 read_lef ${lefs_dir}/tech_lef/NangateOpenCellLibrary.tech.lef
 read_ptf -temperature 0 ${ekit_dir}/nangate/ptf/NCSU_FreePDK_45nm.ptf
 foreach vt [list io hvt svt lvt] {
-  puts "processing ${vt}... " 
+  puts "processing ${vt}... "
   read_library  $lib(${vt})
   read_lef $lef(${vt})
 }
 write_db -data library ${ekit_dir}/libs/nangate_mvt.odb
-puts "wrote ${vt}: ${libs_dir}/libs/nangate_mvt.odb" 
+puts "wrote ${vt}: ${libs_dir}/libs/nangate_mvt.odb"
 
