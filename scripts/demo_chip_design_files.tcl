@@ -12,7 +12,6 @@ set search_path "${demo_chip_rtl_dir}/rtl/mips32r1/trunk/Hardware/MIPS32_Standal
                  ${demo_chip_rtl_dir}/rtl/sondrel \
                  ${demo_chip_rtl_dir}/rtl/openmsp430 \
                  ${demo_chip_rtl_dir}/rtl/openmsp430/periph \
-                 ${demo_chip_rtl_dir}/rtl/hpdmc/trunk/hpdmc_ddr32/rtl \
                  ${demo_chip_rtl_dir}/rtl/hpdmc/trunk/hpdmc_ddr32/rtl"
 
 set rtl_list { cpu_sys.v
