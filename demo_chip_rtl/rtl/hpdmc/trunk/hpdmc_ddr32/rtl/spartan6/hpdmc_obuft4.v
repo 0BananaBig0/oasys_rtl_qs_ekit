@@ -22,31 +22,31 @@
  * and keep compatibility with as many simulators as possible.
  */
 
-module hpdmc_obuft4(
-	input [3:0] T,
-	input [3:0] I,
-	output [3:0] O
+module hpdmc_obuft4 (
+   input  [3:0] T,
+   input  [3:0] I,
+   output [3:0] O
 );
 
-OBUFT obuft0(
-	.T(T[0]),
-	.I(I[0]),
-	.O(O[0])
-);
-OBUFT obuft1(
-	.T(T[1]),
-	.I(I[1]),
-	.O(O[1])
-);
-OBUFT obuft2(
-	.T(T[2]),
-	.I(I[2]),
-	.O(O[2])
-);
-OBUFT obuft3(
-	.T(T[3]),
-	.I(I[3]),
-	.O(O[3])
-);
+   OBUFT obuft0 (
+      .T(T[0]),
+      .I(I[0]),
+      .O(O[0])
+   );
+   OBUFT obuft1 (
+      .T(T[1]),
+      .I(I[1]),
+      .O(O[1])
+   );
+   OBUFT obuft2 (
+      .T(T[2]),
+      .I(I[2]),
+      .O(O[2])
+   );
+   OBUFT obuft3 (
+      .T(T[3]),
+      .I(I[3]),
+      .O(O[3])
+   );
 
 endmodule
